@@ -66,7 +66,7 @@ export default function Home() {
             exit={{ opacity: 0, scale: 0.8 }}
             className="z-10 flex flex-col items-center gap-12 text-center"
           >
-            <h1 className="font-dancing text-6xl md:text-8xl text-[#d14468] drop-shadow-sm">
+            <h1 className="font-dancing text-6xl md:text-8xl text-purple-700 drop-shadow-sm pointer-events-none select-none">
               Will you be my Valentine?
             </h1>
 
@@ -90,7 +90,7 @@ export default function Home() {
                   top: hasMoved ? noPosition.y : "auto",
                   zIndex: 100,
                 }}
-                className="rounded-xl bg-white hover:bg-gray-50 text-black font-bold py-3 px-8 text-xl shadow-md transition-colors duration-200 whitespace-nowrap"
+                className="rounded-xl bg-white hover:bg-gray-50 text-purple-700 font-bold py-3 px-8 text-xl shadow-md transition-colors duration-200 whitespace-nowrap"
                 animate={hasMoved ? { left: noPosition.x, top: noPosition.y } : {}}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
@@ -99,32 +99,38 @@ export default function Home() {
             </div>
           </motion.div>
         ) : (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="z-50 relative p-8 md:p-12 rounded-3xl bg-white/40 backdrop-blur-xl shadow-2xl border border-white/50 max-w-2xl w-full mx-4 text-center"
-          >
-            <h2 className="font-dancing text-6xl text-[#d14468] mb-6">
-              Yay! You said Yes! ❤️
-            </h2>
-
-            <div className="w-full aspect-video bg-pink-100 rounded-2xl mb-6 overflow-hidden flex items-center justify-center">
-              {/* Placeholder for GIF */}
-              <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3h5YXo5Z3Q0Z3Q0Z3Q0Z3Q0Z3Q0Z3Q0Z3Q0/26BRv0ThflsKCqLXG/giphy.gif" alt="Romantic GIF" className="w-full h-full object-cover" />
-            </div>
-
-            <p className="font-inter text-xl text-gray-800 mb-8 leading-relaxed">
-              I'm so happy! I can't wait to spend Valentine's Day with you.
-              It's going to be magical! 💖
-            </p>
-
-            <button
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
               onClick={resetGame}
-              className="rounded-full bg-white/80 hover:bg-white text-[#d14468] font-bold py-2 px-6 shadow-sm transition-all"
+            />
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="z-50 relative p-8 md:p-12 rounded-3xl bg-white/40 backdrop-blur-xl shadow-2xl border border-white/50 max-w-2xl w-full mx-4 text-center"
             >
-              Play Again
-            </button>
-          </motion.div>
+              <button
+                onClick={resetGame}
+                className="absolute top-4 right-4 text-purple-700 hover:text-purple-900 transition-colors"
+                aria-label="Close"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 18 18" /></svg>
+              </button>
+
+              <h2 className="font-dancing text-6xl text-purple-700 mb-6">
+                Thank you for being my valentine. I love you
+              </h2>
+
+              <div className="w-full aspect-video bg-gray-200 rounded-2xl mb-6 overflow-hidden flex items-center justify-center border-2 border-purple-200 border-dashed">
+                <span className="text-purple-400">Put your photo here</span>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </main>
