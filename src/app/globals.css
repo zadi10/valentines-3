@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FFF0F5; /* Pastel Pink */
+  --foreground: #171717;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), sans-serif;
+  overflow: hidden;
+}
