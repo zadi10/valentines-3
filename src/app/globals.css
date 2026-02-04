@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FFF0F5; /* Pastel Pink */
+  --background: #FFF0F5;
+  /* Pastel Pink */
   --foreground: #171717;
 }
 
@@ -10,4 +11,8 @@ body {
   background: var(--background);
   font-family: var(--font-inter), sans-serif;
   overflow: hidden;
+}
+
+.font-great-vibes {
+  font-family: var(--font-great-vibes), cursive;
 }

@@ -66,7 +66,7 @@ export default function Home() {
             exit={{ opacity: 0, scale: 0.8 }}
             className="z-10 flex flex-col items-center gap-12 text-center"
           >
-            <h1 className="font-dancing text-6xl md:text-8xl text-purple-700 drop-shadow-sm pointer-events-none select-none">
+            <h1 className="font-great-vibes text-7xl md:text-9xl text-purple-700 drop-shadow-sm pointer-events-none select-none">
               Will you be my Valentine?
             </h1>
 
@@ -114,15 +114,9 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               className="z-50 relative p-8 md:p-12 rounded-3xl bg-white/40 backdrop-blur-xl shadow-2xl border border-white/50 max-w-2xl w-full mx-4 text-center"
             >
-              <button
-                onClick={resetGame}
-                className="absolute top-4 right-4 text-purple-700 hover:text-purple-900 transition-colors"
-                aria-label="Close"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 18 18" /></svg>
-              </button>
+              {/* Close button removed */}
 
-              <h2 className="font-dancing text-6xl text-purple-700 mb-6">
+              <h2 className="font-great-vibes text-6xl text-purple-700 mb-6">
                 Thank you for being my valentine. I love you
               </h2>
 

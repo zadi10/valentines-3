@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Dancing_Script, Inter } from "next/font/google"; // Import fonts
+import { Great_Vibes, Inter } from "next/font/google"; // Import fonts
 import "./globals.css";
 
 // Configure fonts
-const dancingScript = Dancing_Script({
-  variable: "--font-dancing-script",
+const greatVibes = Great_Vibes({
+  weight: "400",
+  variable: "--font-great-vibes",
   subsets: ["latin"],
 });
 
@@ -26,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dancingScript.variable} ${inter.variable} antialiased`}
+        className={`${greatVibes.variable} ${inter.variable} antialiased`}
       >
         {children}
       </body>
