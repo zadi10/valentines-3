@@ -64,10 +64,10 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            className="z-10 flex flex-col items-center gap-12 text-center"
+            className="z-10 flex flex-col items-center gap-12 text-center pt-20"
           >
-            <h1 className="font-great-vibes text-7xl md:text-9xl text-purple-700 drop-shadow-sm pointer-events-none select-none">
-              Will you be my Valentine?
+            <h1 className="font-dancing-script text-5xl md:text-7xl text-purple-700 drop-shadow-sm pointer-events-none select-none mb-8">
+              Will you be my valentine, Aashi?
             </h1>
 
             <div className="relative flex items-center justify-center gap-8">
@@ -90,7 +90,7 @@ export default function Home() {
                   top: hasMoved ? noPosition.y : "auto",
                   zIndex: 100,
                 }}
-                className="rounded-xl bg-white hover:bg-gray-50 text-purple-700 font-bold py-3 px-8 text-xl shadow-md transition-colors duration-200 whitespace-nowrap"
+                className="rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold py-3 px-8 text-xl shadow-md transition-colors duration-200 whitespace-nowrap"
                 animate={hasMoved ? { left: noPosition.x, top: noPosition.y } : {}}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
@@ -112,16 +112,26 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="z-50 relative p-8 md:p-12 rounded-3xl bg-white/40 backdrop-blur-xl shadow-2xl border border-white/50 max-w-2xl w-full mx-4 text-center"
+              className="z-50 relative p-8 md:p-12 rounded-3xl bg-white/40 backdrop-blur-xl shadow-2xl border border-white/50 max-w-2xl w-full mx-4 text-center font-sans"
             >
               {/* Close button removed */}
 
-              <h2 className="font-great-vibes text-6xl text-purple-700 mb-6">
-                Thank you for being my valentine. I love you
+              <h2 className="font-dancing-script text-6xl text-purple-700 mb-6">
+                Yayyyy You said Yes omgggg.
               </h2>
 
-              <div className="w-full aspect-video bg-gray-200 rounded-2xl mb-6 overflow-hidden flex items-center justify-center border-2 border-purple-200 border-dashed">
-                <span className="text-purple-400">Put your photo here</span>
+              <p className="text-xl text-purple-800 mb-8 leading-relaxed font-sans">
+                I can&apos;t imagine a single Valentine&apos;s Day, or any day, without you by my side.
+                <br />
+                I love you Aaaaassshii
+              </p>
+
+              <div className="w-full aspect-auto bg-transparent rounded-2xl mb-6 overflow-hidden flex items-center justify-center">
+                <img
+                  src="/aashi.jpg"
+                  alt="Us"
+                  className="w-full h-full object-cover rounded-2xl"
+                />
               </div>
             </motion.div>
           </>
